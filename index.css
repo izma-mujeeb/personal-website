@@ -68,26 +68,66 @@
 .technical-section div {
     width: 50%;
 }
-.project h1, .languages h1, .frameworks h1, .checker h1, .recipe h1, .wordle h1 {
-    background-color: rgb(244, 204, 210); 
+.project-name, .languages h1, .frameworks h1 {
+    background-color: pink; 
     padding: 10px;
     color: black;
     font-family: 'Om Botak', sans-serif;
     font-size: 2rem;
-}
-.checker, .recipe, .wordle {
+} 
+.checker, .recipe, .wordle, .hospital, .finance, .nutrition {
     border: 5px white solid;
-    opacity: 0.9;
 }
-.checker {
-    background-image: url("images/checkers.JPG"); 
+.project-tech {
+    font-family: 'Om Botak', sans-serif;
+    color: black;
+    background-color: transparent; 
+    font-size: 1.1rem;
+    padding: 5px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
 }
-.recipe {
+.project-link {
+    color: black;
+    text-decoration: none;
+    border: 4px black solid;
+    border-radius: 10px; 
+    background-color: pink;
+    font-family: 'Om Botak', sans-serif;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+.checker, .recipe, .wordle, .hospital, .finance, .nutrition {
+    position: relative;
+}
+.checker::before, .recipe::before, .wordle::before, .hospital::before, .finance::before, .nutrition::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.4; 
+}
+.checker::before {
+    background-image: url("images/checkers.JPG");
+}
+.recipe::before {
     background-image: url("images/recipe.JPG");
 }
-.wordle {
+.wordle::before {
     background-image: url("images/wordle.JPG");
     background-size: cover; 
+}
+.hospital::before {
+    background-image: url("images/hospital.JPG"); 
+}
+.finance::before {
+    background-image: url("images/finance.JPG");
+}
+.nutrition::before {
+    background-image: url("images/nutrient.JPG");
+}
+.project-name, .project-link, .project-tech {
+    isolation: isolate;
 }
 .name-section, .framework-section {
     display: flex;
@@ -98,7 +138,7 @@
 }
 .framework-section {
     gap: 40px; 
-}
+} 
 .language-img, .frameworks-img {
     background-color: white;
     height: 70px;
